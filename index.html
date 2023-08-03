@@ -1,72 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundamentod Vue</title>
-</head>
-<body>
-    <h1>Fundamentos Vue.js</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fundamentod Vue</title>
+    </head>
+    <body style="padding-bottom: 20em;">
+        <h1>Fundamentos Vue.js</h1>
 
-    <div id="instanciaUno">
-        {{mensaje}}
-        <p>{{numero1}}</p>
-        <p>{{numero2}}</p>
-        <p>{{numero1 * numero2}}</p>
-    </div>
+        <div id="instanciaUno">
+            {{mensaje}}
+            <p>{{numero1}}</p>
+            <p>{{numero2}}</p>
+            <p>{{numero1 * numero2}}</p>
+        </div>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At aliquam corrupti .</p>
-    <div id="instanciaDos">
-         <p>{{mensaje2}}</p>
-    </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At aliquam
+            corrupti .</p>
+        <div id="instanciaDos">
+            <p>{{mensaje2}}</p>
+        </div>
 
-    <p class="">Hola mundo</p>
+        <p class>Hola mundo</p>
 
-    <div id="miApp">
-        <h1>{{titulo}}</h1>
-        <p v-show="aparece">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vel tempore tempora eveniet placeat explicabo architecto molestiae blanditiis, 
-            aspernatur iure reiciendis exercitationem autem, maxime omnis enim nisi nihil totam beatae?</p>
-            <a href="#" v-bind:title = "titulo" >Mantener el Mouse usando v-bind:</a>
-            <p :title = "titulo">Traer el valor sin necesidad de usar v-bind</p>    
+        <div id="miApp">
+            <h1>{{titulo}}</h1>
+            <p v-show="aparece">Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Commodi vel tempore tempora eveniet placeat
+                explicabo architecto molestiae blanditiis,
+                aspernatur iure reiciendis exercitationem autem, maxime omnis
+                enim nisi nihil totam beatae?</p>
+            <a href="#" v-bind:title="titulo">Mantener el Mouse usando v-bind:</a>
+            <p :title="titulo">Traer el valor sin necesidad de usar v-bind</p>
             <!-- <img src="http://placehold.it/" alt=""> -->
 
             <p>¿la suma de num 1 + num 2 es 10?</p>
-            <h3 v-if="num1 + num2 === 10">Si</h3>
-            <h3 v-else >No</h3>
+            <h3 v-if ="num1 + num2 === 10">Si</h3>
+            <h3 v-else>No</h3>
 
+            <h4 v-show ="num1 + num2 === 10">Si</h4>
+            <!--la dif entre el v-show y v-if es que el priemo lo muestra siempre en navegador, solo que lo oculta -->
 
-            <h4 v-show="num1 + num2 === 10">Si</h4> <!--la dif entre el v-show y v-if es que el priemo lo muestra siempre en navegador, solo que lo oculta -->
-
-
-             <ul>
-                <li v-for = "fruta in frutas" style="color:blueviolet;">{{fruta}}</li>
-             </ul>  
-
-             <div style="width: 120px; height: 100px; background: greenyellow;">
-             <ul>
-                <li 
-                 v-for = "(ingrediente, index) in ingredientes"
-                :key="ingrediente.id" style="color:blueviolet;">
-
-                {{index + 1}} - {{ingrediente.name}}
-            </li>
-            </ul>   
-             </div>
             <ul>
+                <li v-for="fruta in frutas" style="color:blueviolet;">{{fruta}}</li>
+            </ul>
+
+            <div style = "width: 120px; height: 80px; background: greenyellow;">
+                <ul>
+                    <li
+                        v-for="(ingrediente, index) in ingredientes"
+                        :key="ingrediente.id" style="color:blueviolet;">
+
+                        {{index + 1}} - {{ingrediente.name}}
+                    </li>
+                </ul>
+            </div>
+            <!-- <ul>
                 <li>manzana</li>
                 <li>uva</li>
                 <li>banana</li>
                 <li>melon</li>
-            </ul>
-            <div  v-for="n in 10 "style="width: 1000px; height: 1000px; background: greenyellow;"></div>
+            </ul> -->
+            <!-- <div v-for="n in 10 "
+                style="width: 1000px; height: 1000px; background: greenyellow;"></div> -->
 
+            <h2>Eventos y Funciones</h2>
+            <button v-on:click="aparece=!aparece">Click Aqui</button>
+            <p v-show="aparece">Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Eum facere amet numquam aliquam illo ut
+                molestias</p>
 
-   
-    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
-    <script src="vue.js"></script>  <!--se usa en caso que la pagina caiga, sino el de abajo a partir de aca se declara el resto -->
-    <script src="instancia.js"></script> 
-    <script src="miApp.js"></script> 
-    </script>
-</body>
+            <button @click="Saludar()">Saludar</button>
+            <button @click="ProbandoParametros(5,7)">Parametros</button>
+          
+  
+            <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+            <!-- <script src="vue.js"></script>-->
+            <!--se usa en caso que la pagina caiga, sino el de abajo a partir de aca se declara el resto -->
+            <script src="instancia.js"></script>
+            <script src="miApp.js"></script>
+           
+
+            
+    </body>
 </html>
-

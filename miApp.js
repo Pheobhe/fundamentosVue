@@ -1,5 +1,4 @@
 const {miApp} = Vue
-
 createApp({
     data() {
         return {
@@ -14,5 +13,17 @@ createApp({
             { 'id': '002', 'name': 'Harina'},
         ]
     }
-}
+    },
+
+    methods: {
+        
+        Saludar: function(){
+            console.log('Saludando desde los methods de vue')
+        },
+        ProbandoParametros: function (a , b){
+            console.log( a + b )
+            return a + b
+        }
+    },
+
 }).mount('#miApp');
