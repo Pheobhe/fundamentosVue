@@ -10,8 +10,9 @@ createApp({
     }
     
 }
-}).mount('#instanciaUno');
 
+
+}).mount('#instanciaUno');
 
 createApp({
     data() {
