@@ -72,15 +72,31 @@
 
             <button @click="Saludar()">Saludar</button>
             <button @click="ProbandoParametros(5,7)">Parametros</button>
-          
+                
+            <h1> {{contador}} </h1>
+              <button @click="IncrementarContador">Incrementar</button>
+                <p>
+                    <input type="number"
+                     placeholder="ingrese numero ..."
+                     v-model="numero1"> 
+                </p>
+                <p>
+                    <input type="number" 
+                    placeholder="ingrese numero ..."
+                    v-model="numero2"> 
+                </p>
+
+                <button>Sumar</button>
+                <h3>Resultado de suma: {{ SumarNumeros()}}</h3>
+        </div> 
   
+
+               
             <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
             <!-- <script src="vue.js"></script>-->
             <!--se usa en caso que la pagina caiga, sino el de abajo a partir de aca se declara el resto -->
             <script src="instancia.js"></script>
             <script src="miApp.js"></script>
-           
-
-            
+                 
     </body>
 </html>
