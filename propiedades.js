@@ -8,7 +8,7 @@ var app = Vue.createApp({
             'camisetas',
             'gorras',
             'lentes'],
-            precioDolar: 3.45
+            precioDolar: 3.42
         }
     },
     computed:{
