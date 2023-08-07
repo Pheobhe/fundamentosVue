@@ -41,21 +41,23 @@
                 <li v-for ="producto in BuscarProducto()">{{producto}}</li>
             </ul>
            </p>
+
            <h3>Diferencias entre propiedades Computadas y Observadas</h3>
            
            <p>
             <input 
             type="text"
             placeholder="Nombre..."
-            v-model="full_name">
-           </p>
+            v-model="full_name"
+            ></p>
            
            <p>
             <input 
             type="text"
             placeholder="Direccion..."
-            v-model="direccion">
-           </p>
+            v-model="direccion"
+            ></p>
+
            <p>
             <textarea
             cols="30"

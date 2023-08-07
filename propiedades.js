@@ -30,11 +30,11 @@ var app = Vue.createApp({
     },
 
     watch:{                   //propiedad observada
-        full_name: function(nuevo) {
+        full_name: function (nuevo) {
             this.comprobante = 'Comprobante para : ' + nuevo + ' con dirección en ' + this.direccion
             
         },
-        direccion: function(nuevo){
+        direccion: function (nuevo){
             this.comprobante = 'Comprobante para : ' + nuevo + ' con dirección en ' + nuevo
         }
 
