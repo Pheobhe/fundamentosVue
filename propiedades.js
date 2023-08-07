@@ -1,8 +1,6 @@
-const {propiedadesApp} = Vue 
-
-createAp ({
+var app = Vue.createApp({
     data() {
-        return{
+        return {
         precios: [100.2, 300, 300.5, 400.5],
         cantidades: [20, 10, 30, 90],
         productos:[
@@ -10,6 +8,7 @@ createAp ({
             'camisetas',
             'gorras',
             'lentes'],
+            precioDolar: 3.45
         }
     },
     computed:{
@@ -17,23 +16,25 @@ createAp ({
             var total = 0
           
             for (let i = 0; i < this.precios.length; i++){
-                const monto = this.precios[i]*this.cantidades[i];
-                total = total + monto
+                var monto = 
+                    this.precios[i]*this.cantidades[i];
+                    total = total + monto
             }
-            return total
+            return total*parseFloat(this.precioDolar);
          }
          
     },
     methods: {
-        SumarVentas: function() {
-            var total = 0
+        SumarVentas() {
+            var total = 0;
           
             for (let i = 0; i < this.precios.length; i++){
-                const monto = this.precios[i]*this.cantidades[i];
+                var monto = this.precios[i]*this.cantidades[i];
                 total = total + monto
             }
-            return total
+            return total;
          }
     }
+})
 
-}).mount('#propiedadesApp');
+app.mount('#propiedadesApp')
