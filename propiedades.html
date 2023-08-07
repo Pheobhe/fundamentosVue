@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propiedades de Vue.js </title>
 </head>
-<body>
+<body style="padding-bottom: 20em;""> 
 
     <div id="propiedadesApp">
        
@@ -32,13 +32,39 @@
 
            <h3>Propiedades Observadas</h3>
            <p>
-            <input type="text"
-            placeholder ="Buscar producto..."
+            <input 
+                type="text"
+                placeholder ="Buscar producto..."
+                v-model="kwarg"
             >
             <ul>
-                <li v-for ="producto in productos">{{producto}}</li>
+                <li v-for ="producto in BuscarProducto()">{{producto}}</li>
             </ul>
            </p>
+           <h3>Diferencias entre propiedades Computadas y Observadas</h3>
+           
+           <p>
+            <input 
+            type="text"
+            placeholder="Nombre..."
+            v-model="full_name">
+           </p>
+           
+           <p>
+            <input 
+            type="text"
+            placeholder="Direccion..."
+            v-model="direccion">
+           </p>
+           <p>
+            <textarea
+            cols="30"
+            rows="10"
+            placeholder="Comprobante..."
+            v-model="comprobante"
+            ></textarea>
+           </p>
+
     </div>
 
     <script src="https://unpkg.com/vue@3.3.4/dist/vue.global.js"></script>

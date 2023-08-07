@@ -8,7 +8,11 @@ var app = Vue.createApp({
             'camisetas',
             'gorras',
             'lentes'],
-            precioDolar: 3.42
+            precioDolar: 3.42,
+            kwarg:'',
+            full_name: '',
+            direccion: '',
+            comprobante: ''
         }
     },
     computed:{
@@ -24,6 +28,18 @@ var app = Vue.createApp({
          }
          
     },
+
+    watch:{                   //propiedad observada
+        full_name: function(nuevo) {
+            this.comprobante = 'Comprobante para : ' + nuevo + ' con dirección en ' + this.direccion
+            
+        },
+        direccion: function(nuevo){
+            this.comprobante = 'Comprobante para : ' + nuevo + ' con dirección en ' + nuevo
+        }
+
+    },
+
     methods: {
         SumarVentas() {
             var total = 0;
@@ -33,8 +49,20 @@ var app = Vue.createApp({
                 total = total + monto
             }
             return total;
+         },
+         BuscarProducto: function(){
+            var clave_busqueda = this.kwarg
+            return this.productos.filter(
+                function(valor){
+                   return valor.includes(clave_busqueda)
+                }
+            )
+         },
+        //  generarNombres: function(){
+        //     return this.full_name + '--' + this.direccion
+ 
          }
-    }
+    
 })
 
 app.mount('#propiedadesApp')
