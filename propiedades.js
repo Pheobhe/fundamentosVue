@@ -30,13 +30,18 @@ var app = Vue.createApp({
     },
 
     watch:{                   //propiedad observada
+        // kwarg: function(antiguo, ultimo){
+        //     console.log('**', antiguo)
+        //     console.log('--', ultimo)
+         // },
+        
         full_name: function (nuevo) {
-            this.comprobante = 'Comprobante para : ' + nuevo + ' con dirección en ' + this.direccion
+            this.comprobante = 'Comprobante para : ' + nuevo + ' con dirección en '  + this.direccion
             
         },
         direccion: function (nuevo){
-            this.comprobante = 'Comprobante para : ' + nuevo + ' con dirección en ' + nuevo
-        }
+            this.comprobante = 'Comprobante para : ' + this.full_name + ' con dirección en ' + nuevo
+        },
 
     },
 
